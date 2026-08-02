@@ -54,7 +54,9 @@ RAFU and ASUKSHIRA are separate, related frameworks developed by Waysoroh (Mahdi
 /
 ├── legibility-score/        # Free diagnostic tool (static HTML/CSS/JS)
 ├── premise-audit/           # Assumption-audit diagnostic tool (static HTML/CSS/JS)
-├── index.html               # Solvese website
+├── our-manifesto/           # Standalone strategic framework page
+├── our-approach/            # Standalone methodology page (TRACE/FORGE/AOS)
+├── index.html               # Solvese homepage
 ├── robots.txt
 └── README.md
 ```
