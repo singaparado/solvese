@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/legibility-score", "destination": "/legibility-score/index.html" },
+    { "source": "/legibility-score/", "destination": "/legibility-score/index.html" },
+    { "source": "/premise-audit", "destination": "/premise-audit/index.html" },
+    { "source": "/premise-audit/", "destination": "/premise-audit/index.html" },
+    { "source": "/our-manifesto", "destination": "/our-manifesto/index.html" },
+    { "source": "/our-manifesto/", "destination": "/our-manifesto/index.html" },
+    { "source": "/our-approach", "destination": "/our-approach/index.html" },
+    { "source": "/our-approach/", "destination": "/our-approach/index.html" },
+    { "source": "/work", "destination": "/work/index.html" },
+    { "source": "/work/", "destination": "/work/index.html" }
+  ]
+}
