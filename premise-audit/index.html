@@ -160,22 +160,62 @@
 
   footer { padding: 24px 6vw; border-top: var(--border-thin); text-align: center; }
   footer p { font-family: var(--mono); font-size: 0.65rem; color: rgba(247,241,227,0.35); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none; }
+    .hamburger span { display:block; width:24px; height:2px; background:var(--ivory); border-radius:2px; transition:all 0.3s; }
+    @media(max-width: 900px) { 
+      .nav-links-desktop { display:none !important; } 
+      .hamburger { display:flex !important; } 
+    }
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--deep); z-index:999; flex-direction:column; padding:0; overflow-y:auto; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu-header { display:flex; align-items:center; justify-content:space-between; padding:20px 6vw; border-bottom:var(--border); }
+    .mobile-menu-close { background:none; border:none; cursor:pointer; font-family:var(--serif-title); font-size:0.8rem; letter-spacing:0.1em; color:var(--aegean); text-transform:uppercase; display:flex; align-items:center; gap:8px; }
+    .mobile-menu-links { display:flex; flex-direction:column; padding:24px 6vw; }
+    .mobile-menu-links a { font-family:var(--serif-title); font-size:1.8rem; font-weight:600; color:var(--ivory); text-decoration:none; cursor:pointer; padding:16px 0; border-bottom:1.5px solid var(--cobalt); line-height:1; display:block; }
+    .mobile-menu-links a:hover { color:var(--aegean-light); }
+    .mobile-menu-cta { margin:24px 6vw 0; }
+    .mobile-menu-cta a { display:block; background:var(--aegean); color:var(--ivory); font-family:var(--serif-title); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; padding:18px 24px; text-align:center; cursor:pointer; text-decoration:none; }
+
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="logo-wrap" href="/">
-    <div class="logo-text">
-      <span class="logo-main">Solvese</span>
-      <span class="logo-sub">Strategy • Messaging • Go-To-Market</span>
+    <a class="logo-wrap" href="/">
+      <div class="logo-text">
+        <span class="logo-main">Solvese</span>
+        <span class="logo-sub">STRATEGY • MESSAGING • GO-TO-MARKET</span>
+      </div>
+    </a>
+        <div class="nav-links-desktop">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/our-manifesto/">Our Manifesto</a>
+      <a class="nav-link" href="/our-approach/">Our Approach</a>
+      <a class="nav-link" href="/work/">Our Work</a>
+      <a class="nav-link" href="/complexity-tax/">Complexity Tax</a>
+      <a href="/#contact" class="nav-cta">Commission an Audit</a>
     </div>
-  </a>
-  <div class="nav-links">
-    <a href="/legibility-score.html" class="nav-link">Legibility Score</a>
-    <a href="/#contact" class="nav-cta">Commission an Audit</a>
+    <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true">
+    <div class="mobile-menu-header">
+      <div class="logo-text"><span class="logo-main">Solvese</span></div>
+      <button class="mobile-menu-close" onclick="closeMobileMenu()">Close</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="/" onclick="closeMobileMenu()">Home</a>
+      <a href="/our-manifesto/" onclick="closeMobileMenu()">Our Manifesto</a>
+      <a href="/our-approach/" onclick="closeMobileMenu()">Our Approach</a>
+      <a href="/work/" onclick="closeMobileMenu()">Our Work</a>
+      <a href="/complexity-tax/" onclick="closeMobileMenu()">Complexity Tax</a>
+    </div>
+    <div class="mobile-menu-cta">
+      <a href="/#contact" onclick="closeMobileMenu()">Commission an Audit →</a>
+    </div>
   </div>
-</nav>
 
 <main>
   <div class="kicker">The Premise Audit</div>
@@ -222,9 +262,13 @@
   </div>
 </main>
 
-<footer>
-  <p>© 2026 Solvese. Built for the ceiling, never the gutter.</p>
-</footer>
+  <footer>
+    <p>© 2026 Solvese. Built for the ceiling, never the gutter.</p>
+    <div class="footer-links">
+      <a href="/">Engine Matrix</a>
+      <a href="mailto:solvese@gmail.com">Secure Link</a>
+    </div>
+  </footer>
 
 <script>
   /**
@@ -454,5 +498,15 @@
   });
 </script>
 
+<script>
+function openMobileMenu() {
+  document.getElementById('mobile-menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
 </body>
 </html>

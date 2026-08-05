@@ -4208,7 +4208,8 @@ a, a:visited, a:hover, a:active {
     </a>
     
     <!-- This container is hidden on mobile via CSS -->
-    <div class="nav-links-desktop">
+        <div class="nav-links-desktop">
+      <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/our-manifesto/">Our Manifesto</a>
       <a class="nav-link" href="/our-approach/">Our Approach</a>
       <a class="nav-link" href="/work/">Our Work</a>
@@ -4221,14 +4222,13 @@ a, a:visited, a:hover, a:active {
     </button>
   </nav>
   
-  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true">
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true">
     <div class="mobile-menu-header">
       <div class="logo-text"><span class="logo-main">Solvese</span></div>
       <button class="mobile-menu-close" onclick="closeMobileMenu()">Close</button>
     </div>
     <div class="mobile-menu-links">
       <a href="/" onclick="closeMobileMenu()">Home</a>
-      <a href="/#services" onclick="closeMobileMenu()">Execution Tiers</a>
       <a href="/our-manifesto/" onclick="closeMobileMenu()">Our Manifesto</a>
       <a href="/our-approach/" onclick="closeMobileMenu()">Our Approach</a>
       <a href="/work/" onclick="closeMobileMenu()">Our Work</a>
@@ -4631,7 +4631,7 @@ a, a:visited, a:hover, a:active {
 
 
 
-    <footer>
+      <footer>
     <p>© 2026 Solvese. Built for the ceiling, never the gutter.</p>
     <div class="footer-links">
       <a href="/">Engine Matrix</a>
@@ -4652,10 +4652,10 @@ document.addEventListener("DOMContentLoaded", function(){
     panel.classList.remove("active-view");
   });
 
-  const home = document.getElementById("view-home");
-  if (home) {
-    home.style.display = "block";
-    home.classList.add("active-view");
+  const targetView = document.getElementById("view-work");
+  if (targetView) {
+    targetView.style.display = "block";
+    targetView.classList.add("active-view");
   }
 
 
@@ -5245,6 +5245,16 @@ window.handleEmailCapture = function() {
   if (confirmEl) confirmEl.style.display = 'block';
 };
   
+</script>
+<script>
+function openMobileMenu() {
+  document.getElementById('mobile-menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
 </script>
 </body>
 </html>
